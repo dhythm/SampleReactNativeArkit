@@ -217,5 +217,6 @@ EOF
 ```
 # react-native-arkit doesn't apply for the latest react native.
 # need to add two lines in Podfile as well.
+# following with https://github.com/react-native-ar/react-native-arkit/pull/208
 yarn add github:code-matt/react-native-arkit react-native-svg
 ```

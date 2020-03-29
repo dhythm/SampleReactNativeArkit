@@ -125,3 +125,55 @@ cat <<EOF > .eslintrc.json
 }
 EOF
 ```
+
+```
+yarn add -D babel-preset-react-native babel-plugin-module-resolver babel-plugin-styled-components @babel/core @babel/preset-env @babel/preset-typescript
+cat <<EOF > babel.config.js
+module.exports = {
+  presets: [
+    'module:metro-react-native-babel-preset',
+    '@babel/preset-typescript',
+  ],
+  plugins: [
+    [
+      'module-resolver',
+      {
+        root: ['.'],
+        extensions: ['.js', '.json', '.jsx', '.ts', '.tsx'],
+        alias: {},
+      },
+    ],
+    'babel-plugin-styled-components',
+  ],
+};
+EOF
+```
+
+```
+yarn add -D prettier
+cat <<EOF > .prettierrc
+{
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "arrowParens": "always"
+}
+EOF
+yarn add -D lint-staged husky
+```
+
+```
+yarn add -D reactotron-react-native
+cat <<EOF > ReactotronConfig.js
+import Reactotron from 'reactotron-react-native';
+
+Reactotron.configure() // controls connection & communication settings
+  .useReactNative() // add all built-in react native plugins
+  .connect(); // let's connect!
+
+console.tron = Reactotron;
+console.log = Reactotron.log;
+console.tron.log('Welcome to Reactotron')
+
+EOF
+```

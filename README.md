@@ -213,3 +213,7 @@ console.tron.log('Welcome to Reactotron')
 
 EOF
 ```
+
+```
+yarn add react-native-arkit
+```

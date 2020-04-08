@@ -126,7 +126,7 @@ const ARKitContainer: React.FunctionComponent = () => {
           extrusion: 10,
         }}
       /> */}
-      {setPosition && (
+      {position && (
         <ARKit.Text
           text="ARKit is Cool!"
           position={position}

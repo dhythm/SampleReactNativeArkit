@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ARKit } from 'react-native-arkit';
 
 const ARKitContainer: React.FunctionComponent = () => {
+  const [position, setPosition] = useState(null);
+  const [eulerAngles, setEulerAngles] = useState(null);
   return (
     <ARKit
       style={{ flex: 1 }}
@@ -13,22 +15,35 @@ const ARKitContainer: React.FunctionComponent = () => {
       // get the current lightEstimation (if enabled)
       // it fires rapidly, so better poll it from outside with
       // ARKit.getCurrentLightEstimation()
-      onLightEstimation={(e) => console.log(e.nativeEvent)}
+      // onLightEstimation={(e) => console.log(e.nativeEvent)}
       // event listener for (horizontal) plane detection
-      onPlaneDetected={(anchor) => console.log(anchor)}
+      // onPlaneDetected={(anchor) => console.log(anchor)}
       // event listener for plane update
-      onPlaneUpdated={(anchor) => console.log(anchor)}
+      // onPlaneUpdated={(anchor) => console.log(anchor)}
       // arkit sometimes removes detected planes
-      onPlaneRemoved={(anchor) => console.log(anchor)}
+      // onPlaneRemoved={(anchor) => console.log(anchor)}
       // event listeners for all anchors, see [Planes and Anchors](#planes-and-anchors)
-      onAnchorDetected={(anchor) => console.log(anchor)}
-      onAnchorUpdated={(anchor) => console.log(anchor)}
-      onAnchorRemoved={(anchor) => console.log(anchor)}
+      onAnchorDetected={(anchor) => {
+        console.log({ anchor });
+        setPosition(anchor?.position);
+        setEulerAngles(anchor?.eulerAngles);
+      }}
+      onAnchorUpdated={(anchor) => {
+        console.log({ anchor });
+        setPosition(anchor?.position);
+        setEulerAngles(anchor?.eulerAngles);
+      }}
+      onAnchorRemoved={(anchor) => {
+        console.log({ anchor });
+        setPosition(null);
+        setEulerAngles(null);
+      }}
       // you can detect images and will get an anchor for these images
-      detectionImages={[{ resourceGroupName: 'DetectionImages' }]}
-      onARKitError={console.log} // if arkit could not be initialized (e.g. missing permissions), you will get notified here
+      // detectionImages={[{ resourceGroupName: 'DetectionImages' }]}
+      detectionImages={[{ resourceGroupName: 'AR Resources' }]}
+      // onARKitError={console.log} // if arkit could not be initialized (e.g. missing permissions), you will get notified here
     >
-      <ARKit.Box
+      {/* <ARKit.Box
         position={{ x: 0, y: 0, z: 0 }}
         shape={{ width: 0.1, height: 0.1, length: 0.1, chamfer: 0.01 }}
       />
@@ -110,7 +125,15 @@ const ARKitContainer: React.FunctionComponent = () => {
               `,
           extrusion: 10,
         }}
-      />
+      /> */}
+      {setPosition && (
+        <ARKit.Text
+          text="ARKit is Cool!"
+          position={position}
+          eulerAngles={eulerAngles}
+          font={{ size: 0.15, depth: 0.05 }}
+        />
+      )}
     </ARKit>
   );
 };

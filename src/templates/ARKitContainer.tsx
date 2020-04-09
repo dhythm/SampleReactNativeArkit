@@ -127,15 +127,39 @@ const ARKitContainer: React.FunctionComponent = () => {
         }}
       /> */}
       {position && (
-        <ARKit.Text
-          text="ARKit is Cool!"
-          position={position}
-          eulerAngles={eulerAngles}
-          font={{ size: 0.15, depth: 0.05 }}
-        />
+        <>
+          {/* <ARKit.Text
+            text="ARKit is Cool!"
+            position={getFurtherPosition(position)}
+            eulerAngles={rotatePlane(eulerAngles)}
+            font={{ size: 0.15, depth: 0.05 }}
+          /> */}
+          <ARKit.Model
+            position={{ ...getFurtherPosition(position), frame: 'local' }}
+            scale={0.05}
+            model={{
+              scale: 1,
+              file: 'art.scnassets/BlueEyes.scn',
+            }}
+          />
+        </>
       )}
     </ARKit>
   );
+};
+
+const getFurtherPosition = (position) => {
+  return {
+    ...position,
+    z: position.z * 1.25,
+  };
+};
+
+const rotatePlane = (eulerAngles) => {
+  return {
+    ...eulerAngles,
+    x: eulerAngles.x - Math.PI / 2,
+  };
 };
 
 export default ARKitContainer;

@@ -19,6 +19,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* SampleReactNativeArkitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SampleReactNativeArkitTests.m */; };
 		9F88577C0450A68E76134E5A /* libPods-SampleReactNativeArkit-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09AE13613E678F6967477A19 /* libPods-SampleReactNativeArkit-tvOSTests.a */; };
 		B29D2EF4DB362BC9C623117E /* libPods-SampleReactNativeArkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7401761B30C1923AD6336DB9 /* libPods-SampleReactNativeArkit.a */; };
+		C01CD427243EAF5D00303EEC /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C01CD426243EAF5D00303EEC /* art.scnassets */; };
 		DE2B22BC80B590F2586E09E3 /* libPods-SampleReactNativeArkit-SampleReactNativeArkitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 407E6F7BA5AC778CE9C820AC /* libPods-SampleReactNativeArkit-SampleReactNativeArkitTests.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		7401761B30C1923AD6336DB9 /* libPods-SampleReactNativeArkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleReactNativeArkit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83818E378BE9987D24E11FEC /* libPods-SampleReactNativeArkit-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleReactNativeArkit-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B73B1F3372423078E1199B29 /* Pods-SampleReactNativeArkit-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleReactNativeArkit-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-SampleReactNativeArkit-tvOS/Pods-SampleReactNativeArkit-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C01CD426243EAF5D00303EEC /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		EADBEBFFBB279CF85AF735ED /* Pods-SampleReactNativeArkit-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleReactNativeArkit-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SampleReactNativeArkit-tvOSTests/Pods-SampleReactNativeArkit-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -132,6 +134,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				C01CD426243EAF5D00303EEC /* art.scnassets */,
 			);
 			name = SampleReactNativeArkit;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				C01CD427243EAF5D00303EEC /* art.scnassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -136,7 +136,7 @@ const ARKitContainer: React.FunctionComponent = () => {
           /> */}
           <ARKit.Model
             position={{ ...getFurtherPosition(position), frame: 'local' }}
-            scale={0.05}
+            scale={0.01}
             model={{
               scale: 1,
               file: 'art.scnassets/BlueEyes.scn',
